@@ -1,8 +1,10 @@
-class CampaignFinisherWorker < ProjectBaseWorker
+class CampaignFinisherWorker
   include Sidekiq::Worker
   sidekiq_options retry: false
 
-  def perform id
-    resource_action id, :finish
+  def perform project_id
+    resource = Project.find project_id
+    Rails.logger.info "[FINISHING PROJECT #{resource.id}] #{resource.name}"
+    resource.finish
   end
 end

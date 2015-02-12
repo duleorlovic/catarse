@@ -8,7 +8,7 @@ class Users::CreditCardsController < ApplicationController
   def destroy
     authorize resource
     resource.cancel_subscription
-    destroy! { edit_user_path(parent, anchor: 'billing') }
+    destroy! { user_path(parent, anchor: 'credit_cards') }
   end
 end
 

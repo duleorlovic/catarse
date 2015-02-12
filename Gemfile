@@ -71,6 +71,7 @@ gem 'pundit'
 gem 'catarse_monkeymail', '>= 0.1.6'
 
 # HTML manipulation and formatting
+gem 'formtastic',   '~> 2.2.1'
 gem 'simple_form'
 gem 'mail_form'
 gem "auto_html"
